@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Admin Login</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="container">
+    <!-- Login Section -->
+    <div id="loginSection">
+      <h1>Bank Admin Login</h1>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <!-- Admin Section (Hidden Initially) -->
+    <div id="adminSection" class="hidden">
+      <div class="admin-layout">
+        <!-- Admin Menu (Left Side) -->
+        <div class="admin-menu">
+          <h2>Admin Menu</h2>
+          <button id="createAccountBtn">Create Account</button>
+          <button id="depositAmountBtn">Deposit Amount</button>
+          <button id="withdrawMoneyBtn">Withdraw Money</button>
+          <button id="checkBalanceBtn">Check Balance</button>
+          <button id="logoutBtn">Logout</button>
+        </div>
+
+        <!-- Forms for Operations (Right Side, Hidden Initially) -->
+        <div class="forms-container">
+          <div id="formPlaceholder">
+            <p>Select an option from the menu to proceed.</p>
+          </div>
+
+          <!-- Create Account Form -->
+          <form id="createAccountForm" class="operation-form hidden">
+            <h3>Create Account</h3>
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" required>
+            <label for="accountHolder">Account Holder Name:</label>
+            <input type="text" id="accountHolder" name="accountHolder" required>
+            <label for="initialBalance">Initial Balance:</label>
+            <input type="number" id="initialBalance" name="initialBalance" required>
+            <button type="submit">Create Account</button>
+            <button type="button" class="cancelBtn">Cancel</button>
+          </form>
+
+          <!-- Deposit Amount Form -->
+          <form id="depositAmountForm" class="operation-form hidden">
+            <h3>Deposit Amount</h3>
+            <label for="depositAccountNumber">Account Number:</label>
+            <input type="text" id="depositAccountNumber" name="depositAccountNumber" required>
+            <label for="depositAmount">Amount to Deposit:</label>
+            <input type="number" id="depositAmount" name="depositAmount" required>
+            <button type="submit">Deposit</button>
+            <button type="button" class="cancelBtn">Cancel</button>
+          </form>
+
+          <!-- Withdraw Money Form -->
+          <form id="withdrawMoneyForm" class="operation-form hidden">
+            <h3>Withdraw Money</h3>
+            <label for="withdrawAccountNumber">Account Number:</label>
+            <input type="text" id="withdrawAccountNumber" name="withdrawAccountNumber" required>
+            <label for="withdrawAmount">Amount to Withdraw:</label>
+            <input type="number" id="withdrawAmount" name="withdrawAmount" required>
+            <button type="submit">Withdraw</button>
+            <button type="button" class="cancelBtn">Cancel</button>
+          </form>
+
+          <!-- Check Balance Form -->
+          <form id="checkBalanceForm" class="operation-form hidden">
+            <h3>Check Balance</h3>
+            <label for="balanceAccountNumber">Account Number:</label>
+            <input type="text" id="balanceAccountNumber" name="balanceAccountNumber" required>
+            <button type="submit">Check Balance</button>
+            <button type="button" class="cancelBtn">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Output Section -->
+      <div id="output" class="hidden">
+        <h3>Operation Result:</h3>
+        <p id="result"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
